@@ -22,7 +22,7 @@ Changes include:
  - Luistervink integration -- you can set a Luistervink ID from BirdNET-Pi's "Tools" > "Settings" page. Stay tuned to get your own ID
 
 
-!! note: see 'Migrating' on how to migrate from mcguirepr89, then change origin to https://github.com/fkdeboer/BirdNET-Pi.git
+!! note: see 'Migrating' on how to migrate from mcguirepr89, then change origin to https://github.com/wilder-insights-lab/BirdNET-Pi.git
 
 ## Introduction
 BirdNET-Pi is built on the [BirdNET framework](https://github.com/kahst/BirdNET-Analyzer) by [**@kahst**](https://github.com/kahst) <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"></a> using [pre-built TFLite binaries](https://github.com/PINTO0309/TensorflowLite-bin) by [**@PINTO0309**](https://github.com/PINTO0309) . It is able to recognize bird sounds from a USB microphone or sound card in realtime and share its data with the rest of the world.
@@ -103,7 +103,7 @@ Please note that installing BirdNET-Pi on top of other servers is not supported.
 
 The system can be installed with:
 ```
-curl -s https://raw.githubusercontent.com/fkdeboer/BirdNET-Pi/main/newinstaller.sh | bash
+curl -s https://raw.githubusercontent.com/wilder-insights-lab/BirdNET-Pi/main/newinstaller.sh | bash
 ```
 The installer takes care of any and all necessary updates, so you can run that as the very first command upon the first boot, if you'd like.
 

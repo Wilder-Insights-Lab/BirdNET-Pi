@@ -70,6 +70,16 @@ if ! [ -L /etc/birdnet/birdnet.conf ] ; then
 fi
 
 # update snippets below
+
+# Migrate the origin remote to the new GitHub org (one-time, self-healing).
+# Existing deployments cloned from the old fork reach this update via GitHub's
+# redirect; rewriting origin points all following updates directly at the new org.
+current_origin=$(sudo_with_user git -C "$HOME/BirdNET-Pi" remote get-url origin 2>/dev/null)
+if [[ "$current_origin" == *"github.com/fkdeboer/BirdNET-Pi"* ]]; then
+  sudo_with_user git -C "$HOME/BirdNET-Pi" remote set-url origin \
+    https://github.com/wilder-insights-lab/BirdNET-Pi.git
+fi
+
 SRC="APPRISE_NOTIFICATION_BODY='(.*)'$"
 DST='APPRISE_NOTIFICATION_BODY="\1"'
 sed -i --follow-symlinks -E "s/$SRC/$DST/" /etc/birdnet/birdnet.conf
