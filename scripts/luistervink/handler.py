@@ -195,6 +195,9 @@ class ReloadDetectionsHandler(BaseHandler):
                 "soundscapeId": 0,
                 "soundscapeStartTime": 0,
                 "soundscapeEndTime": 0,
+                # The model used at detection time is not persisted per-detection,
+                # so the reload path can only report the currently configured model.
+                "model": self.client.conf.get("MODEL") or None,
             }
 
             try:

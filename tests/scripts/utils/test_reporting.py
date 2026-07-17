@@ -39,6 +39,7 @@ def test_luistervink(settings_mock, requests_mock):
             "soundscapeId": 0,
             "soundscapeStartTime": 5.0,
             "soundscapeEndTime": 8.0,
+            "model": None,
         },
         params={"token": "token"},
         timeout=20,

@@ -257,6 +257,7 @@ def luistervink(file: ParseFileName, detections: [Detection], lat: float, lon: f
                 "soundscapeId": soundscape_id,
                 "soundscapeStartTime": detection.start,
                 "soundscapeEndTime": detection.stop,
+                "model": conf.get("MODEL") or None,
             }
 
             log.debug(data)
