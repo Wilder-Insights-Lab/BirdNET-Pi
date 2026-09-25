@@ -5,6 +5,7 @@ import sqlite3
 import logging
 from datetime import datetime
 import time
+from typing import Optional
 from luistervink.dto import Detection
 from tzlocal import get_localzone
 
@@ -49,7 +50,7 @@ class DetectionSoundHandler(BaseHandler):
         log.info(f"Found detection file: {filepath}")
         return self._handle_sound(filepath)
 
-    def _find_detection_filename(self) -> str | None:
+    def _find_detection_filename(self) -> Optional[str]:
         """Find a detection in the database based on the spec."""
         scientific_name = self.spec.get("scientific_name")
         confidence = self.spec.get("confidence")
